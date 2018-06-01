@@ -1,0 +1,13 @@
+.VideoModal .modal-content {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.VideoModal .modal-footer {
+    border: 0px;
+}
+
+.VideoModal_modalbody {
+    padding: 0;
+}
+
