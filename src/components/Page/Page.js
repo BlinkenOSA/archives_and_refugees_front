@@ -1,5 +1,5 @@
 import React from 'react';
-import {Col, Container, Navbar, NavbarBrand, NavbarToggler, Row} from "reactstrap";
+import {Col, Container, Row} from "reactstrap";
 import ResponsiveMap from "../../containers/Map/ResponsiveMap";
 import RecordsSection from "../../containers/Records/RecordsSection";
 import './Page.css'

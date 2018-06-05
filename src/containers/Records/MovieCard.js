@@ -5,16 +5,12 @@ import {
   Col,
   Row,
   CardHeader,
-  CardFooter, Badge, ButtonGroup
+  CardFooter, Badge
 } from "reactstrap";
 import './MovieCard.css'
 import VideoModal from "../VideoModal/VideoModal";
 
 class MovieCard extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   getDirectors() {
     let directors = this.props.movie.directors.map((director) => {
       return director.director
@@ -65,6 +61,14 @@ class MovieCard extends Component {
     }
   }
 
+  getTemporalCoverage() {
+    let dates = [this.props.movie.temporal_coverage_start];
+    if(this.props.movie.temporal_coverage_end) {
+      dates.push(this.props.movie.temporal_coverage_end);
+    }
+    return dates.join(' - ')
+  }
+
   render() {
     return (
       <Card className="MovieCard">
@@ -80,6 +84,9 @@ class MovieCard extends Component {
               </div>
               <div className="MovieCard_info">
                 <i>{this.getCountries()}</i>
+              </div>
+              <div className="MovieCard_info">
+                <i>Temporal coverage: </i> {this.getTemporalCoverage()}
               </div>
               <div className="MovieCard_abstract pt-2">
                 {this.props.movie.abstract}

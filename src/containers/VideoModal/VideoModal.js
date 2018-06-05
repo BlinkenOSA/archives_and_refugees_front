@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Modal, ModalHeader, ModalBody, ModalFooter, ButtonGroup} from 'reactstrap';
+import {Button, Modal, ModalBody, ModalFooter, ButtonGroup} from 'reactstrap';
 import './VideoModal.css'
 
 class VideoModal extends React.Component {
@@ -27,7 +27,7 @@ class VideoModal extends React.Component {
         </ButtonGroup>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} size={'lg'}>
           <ModalBody className="VideoModal_modalbody">
-            <iframe width="798" height="365"
+            <iframe width="798" height="365" title={this.props.movie.title}
                     src={this.props.movie.trailer_embed_url}
                     frameBorder="0"
                     allow="autoplay; encrypted-media" allowFullScreen></iframe>

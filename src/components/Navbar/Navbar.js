@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink} from "reactstrap";
+import {Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem} from "reactstrap";
 import AboutModal from "./AboutModal";
 
 class Navigation extends Component {

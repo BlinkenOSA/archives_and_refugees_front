@@ -16,18 +16,20 @@ export default function Handle({
         left: `${percent}%`,
         position: 'absolute',
         marginLeft: '-11px',
-        marginTop: '-6px',
+        marginTop: '-10px',
         zIndex: 2,
-        width: 24,
-        height: 24,
+        width: 30,
+        height: 30,
         cursor: 'pointer',
         borderRadius: '50%',
         boxShadow: '1px 1px 1px 1px rgba(0, 0, 0, 0.2)',
-        backgroundColor: '#34568f',
+        backgroundColor: '#243d63',
       }}
       {...getHandleProps(id)}
-    />
-  )
+    >
+      <div style={{ fontSize: 11, marginTop: -15, marginLeft: 2 }}>{value}</div>
+    </div>
+    )
 }
 
 Handle.propTypes = {

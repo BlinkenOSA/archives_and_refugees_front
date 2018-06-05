@@ -3,6 +3,11 @@ import Slider, { Rail, Handles, Tracks, Ticks } from 'react-compound-slider'
 import Tick from './Tick'
 import Track from './Track'
 import Handle from './Handle'
+import axios from 'axios'
+import {GET_TEMPORAL_COVERAGE} from "../../config";
+import {connect} from "react-redux";
+import selectDates from "./actions/selectDates";
+import selectRecords from "../Records/actions/selectRecords";
 
 const sliderStyle = {
   position: 'relative',
@@ -18,40 +23,55 @@ const railStyle = {
   backgroundColor: 'rgb(155,155,155)',
 };
 
-const defaultValues = [240, 360]
+const defaultValues = [1940, 2010];
 
 class DateSlider extends Component {
-  state = {
-    domain: [200, 500],
-    values: defaultValues.slice(),
-    update: defaultValues.slice(),
-    reversed: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      domain: [1915, 2015],
+      values: defaultValues.slice(),
+      reversed: false,
+    };
+  }
 
   onUpdate = update => {
-    this.setState({ update })
+    this.setState({ update });
   };
 
   onChange = values => {
-    this.setState({ values })
+    let date_from, date_to;
+    [date_from, date_to] = values.slice();
+    selectDates({
+      date_from: date_from,
+      date_to: date_to
+    });
+    selectRecords({
+      country: this.props.selectedCountry,
+      keyword: this.props.selectedKeyword,
+      date_from: this.props.date_from,
+      date_to: this.props.date_to
+    })
   };
 
-  setDomain = domain => {
-    this.setState({ domain })
-  };
-
-  toggleReverse = () => {
-    this.setState(prev => ({ reversed: !prev.reversed }))
-  };
+  componentDidMount() {
+    axios.get(GET_TEMPORAL_COVERAGE).then((response) => {
+      this.setState({
+        ...this.state,
+        domain: [parseInt(response.data.earliest, 10), parseInt(response.data.latest, 10)],
+        values: [parseInt(response.data.earliest, 10), parseInt(response.data.latest, 10)]
+      })
+    })
+  }
 
   render() {
-    const { state: { domain, values, update, reversed } } = this
+    const { state: { domain, values, reversed } } = this;
 
     return (
       <div style={{ height: 150, width: '90%', margin: '15px auto', }}>
         <Slider
           mode={2}
-          step={5}
+          step={1}
           domain={domain}
           reversed={reversed}
           rootStyle={sliderStyle}
@@ -107,4 +127,13 @@ class DateSlider extends Component {
   }
 }
 
-export default DateSlider;
+const mapStateToProps = (state) => {
+  return {
+    selectedCountry: state.countryFilter.selectedCountry,
+    selectedKeyword: state.keywordFilter.selectedKeyword,
+    date_from: state.dateSlider.date_from,
+    date_to: state.dateSlider.date_to
+  }
+};
+
+export default connect(mapStateToProps)(DateSlider);

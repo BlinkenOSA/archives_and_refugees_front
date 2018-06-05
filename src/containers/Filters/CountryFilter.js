@@ -6,7 +6,6 @@ import {GET_COUNTRIES} from "../../config";
 import selectCountry from "./actions/selectCountry";
 import {connect} from "react-redux";
 import selectRecords from "../Records/actions/selectRecords";
-import selectKeyword from "./actions/selectKeyword";
 
 
 class CountryFilter extends Component {
@@ -39,7 +38,11 @@ class CountryFilter extends Component {
     let country;
     country = value ? value.value : null;
     selectCountry(value);
-    selectRecords({country: country})
+    selectRecords({
+      country: country,
+      date_from: this.props.date_from,
+      date_to: this.props.date_to
+    })
   }
 
   render() {
@@ -55,7 +58,11 @@ class CountryFilter extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { selectedCountry: state.countryFilter.selectedCountry }
+  return {
+    selectedCountry: state.countryFilter.selectedCountry,
+    date_from: state.dateSlider.date_from,
+    date_to: state.dateSlider.date_to
+  }
 };
 
 export default connect(mapStateToProps)(CountryFilter);

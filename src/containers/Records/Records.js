@@ -4,7 +4,6 @@ import MovieCard from "./MovieCard";
 import {Col, Row} from "reactstrap";
 import {connect} from "react-redux";
 import selectRecords from "./actions/selectRecords";
-import {RingLoader} from "react-spinners";
 
 class Records extends Component {
 
@@ -68,8 +67,6 @@ class Records extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    selectedCountry: state.countryFilter.selectedCountry,
-    selectedKeyword: state.keywordFilter.selectedKeyword,
     records: state.recordsReducer.records
   }
 };
