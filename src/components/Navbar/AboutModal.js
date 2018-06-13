@@ -24,12 +24,14 @@ class AboutModal extends React.Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} size={'lg'}>
           <ModalHeader toggle={this.toggle}>Archives & Refugees - Map of Migrant and Refugee Films</ModalHeader>
           <ModalBody>
-            The OSA Film Library contains 4,000+ documentary and propaganda films as well as selected fiction.
-            Of the thousands of films, several hundred relate directly to the diverse and dynamic experience of
-            refugees and migrants at varying stages of their journey. In this map, we have provided a geographic
-            visualization of these films, allowing researchers to more easily find films based on: origin country
-            of the refugee/migrant, time period, and type of refugee/migrant experience. All films are in English or
-            have English subtitles.</ModalBody>
+            The Film Library of the Vera and Donald Blinken Open Society Archives contains 4,500+ documentary films
+            focusing on current social issues and international human rights in almost 100 languages,
+            including all films submitted to the Verzio International Human Rights Documentary Film Festival.<br/><br/>
+            Of this unparalleled range of films, several hundred relate directly to the global experience of forcibly
+            displaced people, refugees and migrants, featured at varying stages of their journey. In this interactive
+            map, we have provided a visual geographic catalog of these selected films, allowing researchers to more
+            easily find films based on the origin country of the refugee/migrant, as well as the time period and type
+            of refugee/migrant experience</ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={this.toggle}>Close</Button>
           </ModalFooter>

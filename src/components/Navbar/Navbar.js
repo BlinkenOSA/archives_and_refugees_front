@@ -21,7 +21,7 @@ class Navigation extends Component {
   render() {
     return (
       <Navbar color="dark" dark fixed="top" expand="md">
-        <NavbarBrand href="/">Map of Migrant and Refugee Films</NavbarBrand>
+        <NavbarBrand href={'#'}>Refugee DocMap</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
