@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {colors} from '../../config/colors';
 
 export default function Track({ source, target, getTrackProps }) {
   return (
@@ -8,8 +9,8 @@ export default function Track({ source, target, getTrackProps }) {
         position: 'absolute',
         height: 14,
         zIndex: 1,
-        backgroundColor: '#7aa0c4',
-        borderRadius: 7,
+        backgroundColor: colors.sliderTrackBackground,
+        borderRadius: 0,
         cursor: 'pointer',
         left: `${source.percent}%`,
         width: `${target.percent - source.percent}%`,

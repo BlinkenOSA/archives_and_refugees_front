@@ -1,0 +1,27 @@
+@import '../../scss/colors';
+@import '../../scss/variables';
+
+.ModalHeader {
+    color: $white;
+    background-color: $modalHeaderBackground;
+    border-radius: 0;
+    border: none;
+    font-family: $font-header;
+    font-size: 1.2em;
+}
+
+.ModalContent {
+    font-size: 0.9em;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border: 2px solid $modalBorder;
+    border-radius: 0;
+    color: $white;
+    background-color: $modalContentBackground;
+}
+
+.ModalFooter {
+    background-color: $modalFooterBackground;
+    border: none;
+    border-radius: 0;
+}

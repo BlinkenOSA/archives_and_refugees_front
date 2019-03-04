@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import Select from 'react-select'
-import 'react-select/dist/react-select.css';
 import axios from 'axios';
 import {GET_KEYWORDS} from "../../config";
 import selectKeyword from "./actions/selectKeyword";
 import selectRecords from "../Records/actions/selectRecords";
 import {connect} from "react-redux";
+import {selectStyles} from "../../config/colors";
 
 
 class KeywordFilter extends Component {
@@ -47,9 +47,11 @@ class KeywordFilter extends Component {
     return(
       <Select
         options={this.state.keywords}
-        placeholder={"Select Keyword..."}
+        placeholder={"Keyword..."}
         value={this.props.selectedKeyword}
         onChange={this.saveChanges}
+        styles={selectStyles}
+        isClearable={true}
       />
     )
   }

@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardFooter, Badge
 } from "reactstrap";
-import './MovieCard.css'
+import style from './MovieCard.module.scss'
 import VideoModal from "../VideoModal/VideoModal";
 
 class MovieCard extends Component {
@@ -36,7 +36,7 @@ class MovieCard extends Component {
       return (
         <div className="float-right">
           <a href={this.props.movie.catalog_url} target={'_blank'}>
-            <Button size={'sm'} color='info'>Catalog</Button>
+            <Button outline={true} size={'sm'} >Catalog</Button>
           </a>
         </div>
       )
@@ -46,7 +46,7 @@ class MovieCard extends Component {
   getKeywords() {
     return this.props.movie.keywords.map((keyword) => {
       return (
-        <Badge key={keyword.id} color="info" className={'MovieCard_keyword'}>{keyword.keyword}</Badge>
+        <Badge key={keyword.id} color="primary" className={style.MovieCardKeyword}>{keyword.keyword}</Badge>
       )
     });
   }
@@ -71,30 +71,32 @@ class MovieCard extends Component {
 
   render() {
     return (
-      <Card className="MovieCard">
-        <CardHeader>{this.props.movie.title}</CardHeader>
-        <Row>
-          <Col xs={4} className={'p-0'}>
-            <div className="MovieCard_image" style={this.getThumbnailImage()}> </div>
-          </Col>
-          <Col xs={8}>
-            <div className="MovieCard_content pull-left">
-              <div className="MovieCard_director">
-                <i>Directed by: </i> {this.getDirectors()}
+      <Card className={style.MovieCard}>
+        <CardHeader className={style.MovieCardHeader}>{this.props.movie.title}</CardHeader>
+        <Col xs={12}>
+          <Row>
+            <Col xs={12} md={4} className={style.MovieThumbnail}>
+              <div className={style.MovieCardImage} style={this.getThumbnailImage()}> </div>
+            </Col>
+            <Col xs={12} md={8} className={style.MovieCardContentContainer}>
+              <div className={style.MovieCardContent + ' pull-left'}>
+                <div className={style}>
+                  <i>Directed by: </i> {this.getDirectors()}
+                </div>
+                <div>
+                  <i>{this.getCountries()}</i>
+                </div>
+                <div>
+                  <i>Temporal coverage: </i> {this.getTemporalCoverage()}
+                </div>
+                <div>
+                  {this.props.movie.abstract}
+                </div>
               </div>
-              <div className="MovieCard_info">
-                <i>{this.getCountries()}</i>
-              </div>
-              <div className="MovieCard_info">
-                <i>Temporal coverage: </i> {this.getTemporalCoverage()}
-              </div>
-              <div className="MovieCard_abstract pt-2">
-                {this.props.movie.abstract}
-              </div>
-            </div>
-          </Col>
-        </Row>
-        <CardFooter>
+            </Col>
+          </Row>
+        </Col>
+        <CardFooter className={style.MovieCardFooter}>
           {this.getKeywords()}
           {this.getTrailer()}
         </CardFooter>

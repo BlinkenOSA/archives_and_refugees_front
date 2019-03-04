@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {colors} from '../../config/colors';
 
 export default function Handle({
                          domain: [min, max],
@@ -15,19 +16,19 @@ export default function Handle({
       style={{
         left: `${percent}%`,
         position: 'absolute',
-        marginLeft: '-11px',
-        marginTop: '-10px',
+        marginLeft: '-15px',
+        marginTop: '-12px',
         zIndex: 2,
-        width: 30,
-        height: 30,
+        width: 35,
+        height: 35,
         cursor: 'pointer',
         borderRadius: '50%',
         boxShadow: '1px 1px 1px 1px rgba(0, 0, 0, 0.2)',
-        backgroundColor: '#243d63',
+        backgroundColor: colors.sliderHandle,
       }}
       {...getHandleProps(id)}
     >
-      <div style={{ fontSize: 11, marginTop: -15, marginLeft: 2 }}>{value}</div>
+      <div style={{ fontSize: 11, color: colors.sliderHandleTextColor, marginTop: -13, marginLeft: 4, fontWeight: 800 }}>{value}</div>
     </div>
     )
 }

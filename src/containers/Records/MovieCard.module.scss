@@ -1,0 +1,52 @@
+@import "../../scss/colors";
+@import "../../scss/variables";
+
+.MovieCard {
+    background: #fff;
+    border: 2px solid $movieCardBorderColor;
+    border-radius: 0;
+    margin: 10px 0 10px 0;
+}
+
+.MovieCardImage {
+    background: #000;
+    width: 100%;
+    min-height: 150px;
+    height: 100%;
+}
+
+.MovieCardContent {
+    padding: 10px;
+}
+
+.MovieCardContentContainer {
+    background-color: $movieCardTextBackground;
+    color: $movieCardTextColor;
+}
+
+.MovieCardContent {
+    font-size: 0.8em;
+}
+
+.MovieCardKeyword {
+    margin-right: 5px;
+    font-size: 0.6em;
+}
+
+.MovieThumbnail {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.MovieCardHeader {
+    font-family: $font-header;
+    font-size: 1.2em;
+    border-radius: 0 !important;
+    background-color: $movieCardHeaderColor;
+    color: $movieCardHeaderTextColor;
+}
+
+.MovieCardFooter {
+    border-radius: 0 !important;
+    background-color: $movieCardFooterColor;
+}

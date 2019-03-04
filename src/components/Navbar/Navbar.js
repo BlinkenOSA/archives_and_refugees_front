@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import {Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem} from "reactstrap";
 import AboutModal from "./AboutModal";
+import style from './Navbar.module.scss';
+import logo from '../../assets/img/osa_logo.png';
 
 class Navigation extends Component {
   constructor(props) {
@@ -20,8 +22,14 @@ class Navigation extends Component {
 
   render() {
     return (
-      <Navbar color="dark" dark fixed="top" expand="md">
-        <NavbarBrand href={'#'}>Refugee DocMap</NavbarBrand>
+      <Navbar className={style.Navbar} dark fixed="top" expand="md">
+        <NavbarBrand
+          href={'#'}
+          className={style.NavbarBrand}
+        >
+          <img src={logo} alt={'Blinken OSA Archivum'} className={style.NavBarBrandIcon} />
+          Vera & Donald Blinken Open Society Archives - Refugee DocMap
+        </NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>

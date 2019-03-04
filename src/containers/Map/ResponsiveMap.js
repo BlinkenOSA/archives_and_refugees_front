@@ -18,10 +18,10 @@ class ResponsiveMap extends Component {
     if(window.innerWidth < 500) {
       this.setState({
         width: 450,
-        height: 102 });
+        height: 300 });
     } else {
       let update_width  = window.innerWidth-100;
-      let update_height = window.innerHeight-116;
+      let update_height = window.innerHeight-126;
       this.setState({
         width: update_width,
         height: update_height });

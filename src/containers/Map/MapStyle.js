@@ -1,55 +1,82 @@
+const waterFill = '#D5A021';
+const mapFill = '#EDE7D9';
+
 const mapStyle = [
   {
-    "featureType": "administrative",
-    "elementType": "labels.text.fill",
+    "featureType": "administrative.locality",
+    "elementType": "labels",
     "stylers": [
       {
-        "color": "#444444"
+        "visibility": "on"
       }
     ]
   },
   {
-    "featureType": "landscape",
-    "elementType": "all",
+    "featureType": "administrative.locality",
+    "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#f2f2f2"
+        "color": "#000000"
+      },
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.locality",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "visibility": "on"
+      },
+      {
+        "color": "#ffffff"
+      },
+      {
+        "weight": "0.75"
+      }
+    ]
+  },
+  {
+    "featureType": "landscape.natural",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "visibility": "on"
+      },
+      {
+        "color": "#ded7c6"
       }
     ]
   },
   {
     "featureType": "poi",
-    "elementType": "all",
+    "elementType": "geometry.fill",
     "stylers": [
       {
-        "visibility": "off"
+        "visibility": "on"
+      },
+      {
+        "color": mapFill
       }
     ]
   },
   {
     "featureType": "road",
-    "elementType": "all",
+    "elementType": "geometry",
     "stylers": [
       {
-        "saturation": -100
+        "lightness": 100
       },
-      {
-        "lightness": 45
-      }
-    ]
-  },
-  {
-    "featureType": "road.highway",
-    "elementType": "all",
-    "stylers": [
       {
         "visibility": "simplified"
       }
     ]
   },
   {
-    "featureType": "road.arterial",
-    "elementType": "labels.icon",
+    "featureType": "road",
+    "elementType": "labels",
     "stylers": [
       {
         "visibility": "off"
@@ -57,11 +84,14 @@ const mapStyle = [
     ]
   },
   {
-    "featureType": "transit",
-    "elementType": "all",
+    "featureType": "transit.line",
+    "elementType": "geometry",
     "stylers": [
       {
-        "visibility": "off"
+        "visibility": "on"
+      },
+      {
+        "lightness": 700
       }
     ]
   },
@@ -70,10 +100,16 @@ const mapStyle = [
     "elementType": "all",
     "stylers": [
       {
-        "color": "#46bcec"
-      },
+        "color": waterFill
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels",
+    "stylers": [
       {
-        "visibility": "on"
+        "visibility": "off"
       }
     ]
   }

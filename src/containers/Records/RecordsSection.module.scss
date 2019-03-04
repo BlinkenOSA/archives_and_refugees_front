@@ -1,0 +1,27 @@
+@import "../../scss/colors";
+
+.RecordsContainer {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+/* total width */
+.RecordsContainer::-webkit-scrollbar {
+  background-color: $black;
+  width:16px
+}
+
+/* background of the scrollbar except button or resizer */
+.RecordsContainer::-webkit-scrollbar-track {
+  background-color: $black
+}
+
+/* scrollbar itself */
+.RecordsContainer::-webkit-scrollbar-thumb {
+  background-color: $yellow;
+  border-radius:0;
+  height: 50px;
+}
+
+/* set button(top and bottom of the scrollbar) */
+.RecordsContainer::-webkit-scrollbar-button {display:none}

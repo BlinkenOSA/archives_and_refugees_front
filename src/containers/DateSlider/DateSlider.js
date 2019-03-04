@@ -8,6 +8,7 @@ import {GET_TEMPORAL_COVERAGE} from "../../config";
 import {connect} from "react-redux";
 import selectDates from "./actions/selectDates";
 import selectRecords from "../Records/actions/selectRecords";
+import {colors} from '../../config/colors';
 
 const sliderStyle = {
   position: 'relative',
@@ -20,7 +21,7 @@ const railStyle = {
   height: 14,
   borderRadius: 7,
   cursor: 'pointer',
-  backgroundColor: 'rgb(155,155,155)',
+  backgroundColor: colors.sliderBackground,
 };
 
 const defaultValues = [1940, 2010];
@@ -68,7 +69,7 @@ class DateSlider extends Component {
     const { state: { domain, values, reversed } } = this;
 
     return (
-      <div style={{ height: 150, width: '90%', margin: '15px auto', }}>
+      <div style={{ height: 150, width: '90%', marginTop: '25px', marginLeft: 'auto', marginRight: 'auto' }}>
         <Slider
           mode={2}
           step={1}

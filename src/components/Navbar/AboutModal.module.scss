@@ -1,0 +1,55 @@
+@import "../../scss/colors";
+@import "../../scss/variables";
+
+.NavLink {
+  color: $navLink !important;
+  cursor: pointer;
+  font-family: $font-header;
+  font-size: 1.2em;
+  padding: 0;
+
+  @media (max-width: 767px) {
+    font-size: 0.7em;
+  }
+}
+
+.NavLink:hover {
+  color: $navLinkHover !important;
+}
+
+.ModalHeader {
+  color: $white;
+  background-color: $modalHeaderBackground;
+  border-radius: 0;
+  border: none;
+  font-family: $font-header;
+  font-size: 1.2em;
+}
+
+.ModalContent {
+  font-size: 0.9em;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border: 2px solid $modalBorder;
+  border-radius: 0;
+  color: $white;
+  background-color: $modalContentBackground;
+}
+
+.ModalFooter {
+  background-color: $modalFooterBackground;
+  border: none;
+  border-radius: 0;
+}
+
+.H5Title {
+  font-family: $font-header;
+  font-size: 1.4em;
+  margin-bottom: 15px;
+}
+
+.H6Title {
+  font-family: $font-header;
+  font-size: 1.2em;
+  margin-bottom: 0;
+}

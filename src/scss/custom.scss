@@ -1,0 +1,45 @@
+@import "colors";
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: $font-body !important;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.close {
+  color: $modalClose !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+.close:hover {
+  color: $modalCloseHover !important;
+}
+
+.react-select__menu-list::-webkit-scrollbar {
+  background-color: $black;
+  width:16px
+}
+.react-select__menu-list::-webkit-scrollbar-track {
+  background-color: $black
+}
+.react-select__menu-list::-webkit-scrollbar-thumb {
+  background-color: $yellow;
+  border-radius:0;
+  height: 50px;
+}
+.react-select__menu-list::-webkit-scrollbar-button {display:none}

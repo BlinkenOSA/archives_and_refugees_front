@@ -22,10 +22,10 @@ class Records extends Component {
     if(window.innerWidth < 500) {
       this.setState({
         width: 450,
-        height: 102 });
+        height: window.innerHeight-300 });
     } else {
       let update_width  = window.innerWidth-100;
-      let update_height = window.innerHeight-168;
+      let update_height = window.innerHeight-184;
       this.setState({
         width: update_width,
         height: update_height });
@@ -50,7 +50,7 @@ class Records extends Component {
 
   render() {
     return (
-      <div className={'mapcontent'} style={{ height: this.state.height }}>
+      <div style={{ height: this.state.height }}>
         <Row>
         {this.props.records.map(function(movie, idx) {
           return (

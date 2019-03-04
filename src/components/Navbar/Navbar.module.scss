@@ -1,0 +1,23 @@
+@import "../../scss/colors";
+@import "../../scss/variables";
+
+.Navbar {
+    background-color: $headerBackground;
+}
+
+.NavbarBrand {
+    font-family: $font-header;
+
+    @media (max-width: 767px) {
+        font-size: 0.8em;
+    }
+}
+
+.NavBarBrandIcon {
+    height: 30px;
+    padding-right: 20px;
+
+    @media (max-width: 767px) {
+        display: none;
+    }
+}

@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import Select from 'react-select'
-import 'react-select/dist/react-select.css';
 import axios from 'axios';
 import {GET_COUNTRIES} from "../../config";
 import selectCountry from "./actions/selectCountry";
 import {connect} from "react-redux";
 import selectRecords from "../Records/actions/selectRecords";
-
+import {selectStyles} from "../../config/colors";
 
 class CountryFilter extends Component {
   constructor(props) {
@@ -34,9 +33,10 @@ class CountryFilter extends Component {
     });
   }
 
-  saveChanges(value) {
+  saveChanges(value, action) {
     let country;
     country = value ? value.value : null;
+    console.log(value);
     selectCountry(value);
     selectRecords({
       country: country,
@@ -49,9 +49,12 @@ class CountryFilter extends Component {
     return(
       <Select
         options={this.state.countries}
-        placeholder={"Select Country..."}
+        placeholder={"Country..."}
         value={this.props.selectedCountry}
         onChange={this.saveChanges}
+        isClearable={true}
+        styles={selectStyles}
+        classNamePrefix="react-select"
       />
     )
   }
