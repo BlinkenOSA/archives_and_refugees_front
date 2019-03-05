@@ -9,6 +9,7 @@ import {
 } from "reactstrap";
 import style from './MovieCard.module.scss'
 import VideoModal from "../VideoModal/VideoModal";
+import cx from 'classnames';
 
 class MovieCard extends Component {
   getDirectors() {
@@ -52,12 +53,26 @@ class MovieCard extends Component {
   }
 
   getThumbnailImage() {
-    if(this.props.movie.thumbnail_url) {
-      return {
-        backgroundImage: `url(${this.props.movie.thumbnail_url})`,
-        backgroundPosition: 'center center',
-        backgroundSize: 'cover'
-      }
+    if(this.props.movie.thumbnail) {
+      return (
+          <div
+              className={style.MovieCardImage}
+              style={{
+                backgroundImage: `url(${this.props.movie.thumbnail})`,
+                backgroundPosition: 'center center',
+                backgroundSize: 'cover'
+              }}>
+
+          </div>
+      );
+    } else {
+      return(
+          <div className={style.MovieCardImage}>
+            <div className={style.MovieIcon}>
+              <i className='fas fa-film'> </i>
+            </div>
+          </div>
+      )
     }
   }
 
@@ -76,20 +91,20 @@ class MovieCard extends Component {
         <Col xs={12}>
           <Row>
             <Col xs={12} md={4} className={style.MovieThumbnail}>
-              <div className={style.MovieCardImage} style={this.getThumbnailImage()}> </div>
+              {this.getThumbnailImage()}
             </Col>
             <Col xs={12} md={8} className={style.MovieCardContentContainer}>
               <div className={style.MovieCardContent + ' pull-left'}>
-                <div className={style}>
+                <div className={style.Directors}>
                   <i>Directed by: </i> {this.getDirectors()}
                 </div>
-                <div>
+                <div className={style.Countries}>
                   <i>{this.getCountries()}</i>
                 </div>
-                <div>
+                <div className={style.Coverage}>
                   <i>Temporal coverage: </i> {this.getTemporalCoverage()}
                 </div>
-                <div>
+                <div className={style.Abstract}>
                   {this.props.movie.abstract}
                 </div>
               </div>

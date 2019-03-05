@@ -27,7 +27,7 @@ class VideoModal extends React.Component {
         </ButtonGroup>
         <Modal isOpen={this.state.modal} toggle={this.toggle} contentClassName={style.ModalContent} size={'lg'}>
           <ModalHeader toggle={this.toggle} className={style.ModalHeader}>{this.props.movie.title} - Movie Trailer</ModalHeader>
-          <ModalBody>
+          <ModalBody className={style.ModalBody}>
             <iframe width="798" height="365" title={this.props.movie.title}
                     src={this.props.movie.trailer_embed_url}
                     frameBorder="0"

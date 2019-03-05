@@ -15,6 +15,22 @@
     height: 100%;
 }
 
+.MovieCardImageMissing {
+    color: $movieCardTextColor;
+    height: 100%;
+}
+
+.MovieIcon {
+    color: $movieCardIconColor;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+    height: 100%;
+    padding-top: 50px;
+    font-size: 2em;
+    opacity: .7;
+}
+
 .MovieCardContent {
     padding: 10px;
 }
@@ -49,4 +65,20 @@
 .MovieCardFooter {
     border-radius: 0 !important;
     background-color: $movieCardFooterColor;
+}
+
+.Directors {
+    line-height: 1.3em;
+}
+
+.Countries {
+    line-height: 1.3em;
+}
+
+.Coverage {
+    line-height: 1.3em;
+}
+
+.Abstract {
+    margin-top: 10px;
 }
