@@ -36,7 +36,6 @@ class CountryFilter extends Component {
   saveChanges(value, action) {
     let country;
     country = value ? value.value : null;
-    console.log(value);
     selectCountry(value);
     selectRecords({
       country: country,

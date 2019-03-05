@@ -52,6 +52,7 @@ class KeywordFilter extends Component {
         onChange={this.saveChanges}
         styles={selectStyles}
         isClearable={true}
+        classNamePrefix="react-select"
       />
     )
   }
