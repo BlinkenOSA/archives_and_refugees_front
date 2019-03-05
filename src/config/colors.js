@@ -84,7 +84,7 @@ export const selectStyles = {
         ...provided,
         color: colors.selectText,
         '&:hover': {
-            backgroundColor: colors.selectMenuDropdownButtonHover
+            color: colors.selectMenuDropdownButtonHover
         },
     })
 };
