@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MovieMap from "./MovieMap";
+import {Collapse} from "reactstrap";
 
 class ResponsiveMap extends Component {
 
@@ -7,7 +8,7 @@ class ResponsiveMap extends Component {
     super(props);
     this.state = {
       width:  800,
-      height: 182
+      height: 182,
     }
   }
 
@@ -18,7 +19,7 @@ class ResponsiveMap extends Component {
     if(window.innerWidth < 500) {
       this.setState({
         width: 450,
-        height: 300 });
+        height: 150 });
     } else {
       let update_width  = window.innerWidth-100;
       let update_height = window.innerHeight-126;

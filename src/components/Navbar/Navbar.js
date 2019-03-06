@@ -28,7 +28,7 @@ class Navigation extends Component {
           className={style.NavbarBrand}
         >
           <img src={logo} alt={'Blinken OSA Archivum'} className={style.NavBarBrandIcon} />
-          Vera & Donald Blinken Open Society Archives - Refugee DocMap
+            <span className={style.NavbarBrandText}>Vera & Donald Blinken Open Society Archives - </span>Refugee DocMap
         </NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>

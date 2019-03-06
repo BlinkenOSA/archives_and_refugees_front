@@ -13,11 +13,13 @@
     }
 }
 
-.NavBarBrandIcon {
-    height: 30px;
-    padding-right: 20px;
-
+.NavbarBrandText {
     @media (max-width: 767px) {
         display: none;
     }
+}
+
+.NavBarBrandIcon {
+    height: 30px;
+    padding-right: 20px;
 }
