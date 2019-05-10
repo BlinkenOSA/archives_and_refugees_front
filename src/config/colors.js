@@ -1,25 +1,25 @@
 const palette = {
-    darkGrey: '#292929',
-    lightGrey: '#585858',
-    yellow: '#D5A021',
-    lightYellow: '#EDE7D9',
-    white: '#FFFFFF',
-    black: '#000000'
+    darkest: '#000000',
+    darker: '#292929',
+    dark: '#585858',
+    main: '#D5A021',
+    lighter: '#EDE7D9',
+    lightest: '#FFFFFF',
 };
 
 export const colors = {
-    sliderBackground: palette.darkGrey,
-    sliderTrackBackground: palette.lightGrey,
-    sliderHandle: palette.yellow,
-    sliderHandleTextColor: palette.black,
+    sliderBackground: palette.darker,
+    sliderTrackBackground: palette.dark,
+    sliderHandle: palette.main,
+    sliderHandleTextColor: palette.darkest,
 
-    selectBackgroundColor: palette.darkGrey,
-    selectBorderColor: palette.black,
-    selectText: palette.white,
-    selectTextHover: palette.black,
-    selectMenuDropdownButtonHover: palette.yellow,
-    selectMenuDropdownBackgroundColor: palette.black,
-    selectMenuOptionBackgroundColor: palette.yellow
+    selectBackgroundColor: palette.darker,
+    selectBorderColor: palette.darkest,
+    selectText: palette.lightest,
+    selectTextHover: palette.darkest,
+    selectMenuDropdownButtonHover: palette.main,
+    selectMenuDropdownBackgroundColor: palette.darkest,
+    selectMenuOptionBackgroundColor: palette.main
 };
 
 export const selectStyles = {
@@ -68,7 +68,7 @@ export const selectStyles = {
         backgroundColor: colors.selectMenuDropdownBackgroundColor,
         border: '2px solid ' + colors.selectBorderColor,
         '&::-webkit-scrollbar': {
-           backgroundColor: palette.black,
+           backgroundColor: palette.darkest,
            width: '16px'
         }
     }),

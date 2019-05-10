@@ -2,7 +2,7 @@
 @import '../../scss/variables';
 
 .ModalHeader {
-    color: $white;
+    color: $lightest;
     background-color: $modalHeaderBackground;
     border-radius: 0;
     border: none;
@@ -16,7 +16,7 @@
     -moz-border-radius: 0;
     border: 2px solid $modalBorder;
     border-radius: 0;
-    color: $white;
+    color: $lightest;
     background-color: $modalContentBackground;
 }
 

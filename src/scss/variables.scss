@@ -1,12 +1,16 @@
 @import "./colors";
 
-$font-header: 'Archivo Narrow', sans-serif;
+// $font-header: 'Archivo Narrow', sans-serif;
+$font-header: 'Noto Serif', serif;
+// $font-header: 'Libre Baskerville', serif;
+// $font-header: 'Volkhov', serif;
 $font-body: 'Lato', sans-serif;
 
+
 // Bootstrap upgrades
-$primary: $black;
-$secondary: $yellow;
-$info: $lightGrey;
+$primary: $darkest;
+$secondary: $main;
+$info: $dark;
 
 // Badge
 $badge-padding-y: 5px;

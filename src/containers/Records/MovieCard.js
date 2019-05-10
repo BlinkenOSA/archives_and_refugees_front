@@ -95,17 +95,17 @@ class MovieCard extends Component {
             </Col>
             <Col xs={12} md={8} className={style.MovieCardContentContainer}>
               <div className={style.MovieCardContent + ' pull-left'}>
-                <div className={style.Directors}>
-                  <i>Directed by: </i> {this.getDirectors()}
+                <div className={style.Abstract}>
+                  {this.props.movie.abstract}
                 </div>
                 <div className={style.Countries}>
-                  <i>{this.getCountries()}</i>
+                  <i>Country of origin:</i> {this.getCountries()}
                 </div>
                 <div className={style.Coverage}>
                   <i>Temporal coverage: </i> {this.getTemporalCoverage()}
                 </div>
-                <div className={style.Abstract}>
-                  {this.props.movie.abstract}
+                <div className={style.Directors}>
+                  <i>Directed by: </i> {this.getDirectors()}
                 </div>
               </div>
             </Col>

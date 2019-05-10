@@ -13,7 +13,12 @@ const Map = withScriptjs(withGoogleMap((props) => {
     <GoogleMap
       zoom={zoom}
       ref={(map) => map && map.panTo({lat: latitude,lng: longitude})}
-      defaultOptions={{ styles: mapStyle }}
+      defaultOptions={{
+        styles: mapStyle,
+        mapTypeControl: false,
+        streetViewControl: false,
+        maxZoom: 7
+      }}
     >
       {props.markers.map(function(country){
         return <MovieMapMarker

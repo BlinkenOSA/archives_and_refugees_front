@@ -48,7 +48,7 @@ class CountryFilter extends Component {
     return(
       <Select
         options={this.state.countries}
-        placeholder={"Country..."}
+        placeholder={"Country of origin..."}
         value={this.props.selectedCountry}
         onChange={this.saveChanges}
         isClearable={true}

@@ -31,14 +31,14 @@ body {
 }
 
 .react-select__menu-list::-webkit-scrollbar {
-  background-color: $black;
+  background-color: $darkest;
   width:16px
 }
 .react-select__menu-list::-webkit-scrollbar-track {
-  background-color: $black
+  background-color: $darkest
 }
 .react-select__menu-list::-webkit-scrollbar-thumb {
-  background-color: $yellow;
+  background-color: $main;
   border-radius:0;
   height: 50px;
 }

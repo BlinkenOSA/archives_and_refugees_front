@@ -1,44 +1,36 @@
-/*
-$brown: #4B4237;
-$yellow: #D5A021;
-$cream: #EDE7D9;
-$light-brown: #A49694;
-$choco: #736B60;
-*/
-
-$darkGrey: #292929;
-$lightGrey: #585858;
-$yellow: #D5A021;
-$lightYellow: #EDE7D9;
-$white: #FFFFFF;
-$black: #000000;
+$lightest: #FFFFFF;
+$lighter: #EDE7D9;
+$main: #D5A021;
+$dark: #585858;
+$darker: #292929;
+$darkest: #000000;
 
 // Header + Footer
-$headerBackground: $black;
-$footerBackground: $black;
+$headerBackground: $darkest;
+$footerBackground: $darkest;
 
-$navLink: $white;
-$navLinkHover: $yellow;
+$navLink: $lightest;
+$navLinkHover: $main;
 
 // Filter
-$orTextColor: $white;
+$orTextColor: $lightest;
 
 // Modal
-$modalHeaderBackground: $darkGrey;
-$modalFooterBackground: $darkGrey;
-$modalContentBackground: $lightGrey;
-$modalBorder: $black;
-$modalClose: $white;
-$modalCloseHover: $yellow;
+$modalHeaderBackground: $darker;
+$modalFooterBackground: $darker;
+$modalContentBackground: $dark;
+$modalBorder: $darkest;
+$modalClose: $lightest;
+$modalCloseHover: $main;
 
 // MovieCards
-$moviePageBackground: $lightGrey;
-$movieCardBorderColor: $black;
-$movieCardHeaderColor: $darkGrey;
-$movieCardHeaderTextColor: $white;
-$movieCardTextBackground: $lightGrey;
-$movieCardTextColor: $white;
-$movieCardIconColor: $yellow;
+$moviePageBackground: $dark;
+$movieCardBorderColor: $darkest;
+$movieCardHeaderColor: $darker;
+$movieCardHeaderTextColor: $lightest;
+$movieCardTextBackground: $dark;
+$movieCardTextColor: $lightest;
+$movieCardIconColor: $main;
 
-$movieCardButtonColor: $yellow;
-$movieCardFooterColor: $darkGrey;
+$movieCardButtonColor: $main;
+$movieCardFooterColor: $darker;
