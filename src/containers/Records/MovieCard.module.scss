@@ -53,6 +53,10 @@
     padding-right: 10px;
 }
 
+.MovieCardKeyword:last-of-type {
+    border-right: unset;
+}
+
 .MovieThumbnail {
     padding-left: 0;
     padding-right: 0;
