@@ -36,7 +36,7 @@ class MovieCard extends Component {
       return (
         <div className="float-right">
           <a href={this.props.movie.catalog_url} target={'_blank'}>
-            <Button outline={true} size={'sm'} >Catalog</Button>
+            <Button outline={false} size={'sm'} >Catalog</Button>
           </a>
         </div>
       )

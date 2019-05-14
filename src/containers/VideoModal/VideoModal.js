@@ -22,8 +22,8 @@ class VideoModal extends React.Component {
     return (
       <div>
         <ButtonGroup>
-          <a href={this.props.movie.catalog_url} target={'_blank'} className={'btn btn-outline-secondary btn-sm'}>Catalog</a>
-          <Button outline={true} size={'sm'} onClick={this.toggle}> Watch Trailer</Button>
+          <a href={this.props.movie.catalog_url} target={'_blank'} className={'btn btn-secondary btn-sm'}>Catalog</a>
+          <Button outline={false} size={'sm'} onClick={this.toggle} className={style.TrailerButton}> Watch Trailer</Button>
         </ButtonGroup>
         <Modal isOpen={this.state.modal} toggle={this.toggle} contentClassName={style.ModalContent} size={'lg'}>
           <ModalHeader toggle={this.toggle} className={style.ModalHeader}>{this.props.movie.title} - Movie Trailer</ModalHeader>

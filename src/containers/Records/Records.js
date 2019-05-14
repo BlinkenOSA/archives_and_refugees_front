@@ -88,7 +88,6 @@ class Records extends Component {
         onScroll={this.onScroll}
       >
         <Col xs={12}>
-          {loading ? <MovieListSpinner/> : ''}
           <div>
             <Row>
               {records.map((movie, idx) => {

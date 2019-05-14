@@ -46,7 +46,11 @@
 
 .MovieCardKeyword {
     margin-right: 5px;
-    font-size: 0.7em;
+    font-size: 0.875rem;
+    background-color: unset;
+    font-weight: 300;
+    border-right: 1px solid $main;
+    padding-right: 10px;
 }
 
 .MovieThumbnail {

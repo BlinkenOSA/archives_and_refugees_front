@@ -65,7 +65,7 @@ export const colors = {
     sliderBackground: palette.darker,
     sliderTrackBackground: palette.dark,
     sliderHandle: palette.main,
-    sliderHandleTextColor: palette.darkest,
+    sliderHandleTextColor: palette.lightest,
 
     selectBackgroundColor: palette.darker,
     selectBorderColor: palette.darkest,

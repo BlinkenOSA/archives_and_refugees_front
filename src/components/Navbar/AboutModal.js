@@ -88,7 +88,7 @@ class AboutModal extends React.Component {
             </Row>
           </ModalBody>
           <ModalFooter className={style.ModalFooter}>
-            <Button outline={true} color="secondary" size={'sm'} onClick={this.toggle}>Close</Button>
+            <Button outline={false} color="secondary" size={'sm'} onClick={this.toggle}>Close</Button>
           </ModalFooter>
         </Modal>
       </div>
