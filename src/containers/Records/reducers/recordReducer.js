@@ -1,5 +1,6 @@
 const initialState = {
   records: [],
+  next: '',
   loading: false
 };
 
@@ -8,7 +9,15 @@ function recordReducer(state = initialState, action) {
     case 'SELECT_RECORD':
       return {
         ...state,
-        records: action.payload,
+        records: action.payload.results,
+        next: action.payload.next
+      };
+    case 'ADD_RECORD':
+      const newRecords = [...state.records, ...action.payload.results];
+      return {
+        ...state,
+        records: newRecords,
+        next: action.payload.next
       };
     case 'SET_LOADING':
       return {

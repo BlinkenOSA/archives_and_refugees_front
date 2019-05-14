@@ -35,6 +35,7 @@ class Navigation extends Component {
           <Nav className="ml-auto" navbar>
             <NavItem>
               <AboutModal buttonLabel={'About the project'}/>
+
             </NavItem>
           </Nav>
         </Collapse>

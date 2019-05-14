@@ -1,5 +1,4 @@
-const waterFill = '#D5A021';
-const mapFill = '#EDE7D9';
+import {palette} from '../../config/colors';
 
 const mapStyle = [
   {
@@ -46,7 +45,7 @@ const mapStyle = [
         "visibility": "on"
       },
       {
-        "color": "#ded7c6"
+        "color": palette.lighter
       }
     ]
   },
@@ -58,7 +57,7 @@ const mapStyle = [
         "visibility": "on"
       },
       {
-        "color": mapFill
+        "color": palette.lighter
       }
     ]
   },
@@ -100,7 +99,7 @@ const mapStyle = [
     "elementType": "all",
     "stylers": [
       {
-        "color": waterFill
+        "color": palette.main
       }
     ]
   },

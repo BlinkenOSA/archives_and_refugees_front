@@ -9,7 +9,6 @@ import {
 } from "reactstrap";
 import style from './MovieCard.module.scss'
 import VideoModal from "../VideoModal/VideoModal";
-import cx from 'classnames';
 
 class MovieCard extends Component {
   getDirectors() {

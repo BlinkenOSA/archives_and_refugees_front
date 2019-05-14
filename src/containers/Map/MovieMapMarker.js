@@ -3,6 +3,8 @@ import {Marker} from 'react-google-maps';
 import selectCountry from "../Filters/actions/selectCountry";
 import selectRecords from "../Records/actions/selectRecords";
 
+import {palette} from '../../config/colors';
+
 const MovieMapMarker = (props) => {
   const country = props.country;
 
@@ -12,7 +14,7 @@ const MovieMapMarker = (props) => {
   };
 
   function getIcon(label) {
-    const fillColor='000000';
+    const fillColor=palette.darkest.replace("#", "");
 
     return 'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2238%22%20height%3D' +
       '%2238%22%20viewBox%3D%220%200%2038%2038%22%3E%3Cpath%20fill%3D%22%23' + fillColor + '%22%20stroke%3D%22%23ccc%22%20' +

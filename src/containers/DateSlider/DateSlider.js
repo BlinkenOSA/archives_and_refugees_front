@@ -47,9 +47,25 @@ class DateSlider extends Component {
       date_from: date_from,
       date_to: date_to
     });
+
+    const {selectedCountry, selectedKeyword} = this.props;
+    let keywordParam, countryParam;
+
+    if(selectedCountry) {
+      countryParam = selectedCountry.hasOwnProperty('value') ? selectedCountry.value : '';
+    } else {
+      countryParam = '';
+    }
+
+    if(selectedKeyword) {
+      keywordParam = selectedKeyword.hasOwnProperty('value') ? selectedKeyword.value : '';
+    } else {
+      keywordParam = '';
+    }
+
     selectRecords({
-      country: this.props.selectedCountry,
-      keyword: this.props.selectedKeyword,
+      country: countryParam,
+      keyword: keywordParam,
       date_from: this.props.date_from,
       date_to: this.props.date_to
     })
