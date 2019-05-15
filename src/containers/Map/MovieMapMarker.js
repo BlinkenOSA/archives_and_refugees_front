@@ -20,9 +20,16 @@ const MovieMapMarker = (props) => {
 
   function getIcon(label) {
     const selectedCountry = props.selectedCountry;
+    let selectedCountryValue;
     let fillColor, fontColor;
 
-    if (props.country === selectedCountry) {
+    if (selectedCountry) {
+      selectedCountryValue = selectedCountry.hasOwnProperty('value') ? selectedCountry.value : '0';
+    } else {
+      selectedCountryValue = '0';
+    }
+    
+    if (props.country.value === selectedCountryValue) {
       fontColor='000';
       fillColor='D5A021';
     } else {
