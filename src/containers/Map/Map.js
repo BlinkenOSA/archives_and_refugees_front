@@ -21,12 +21,16 @@ const Map = withScriptjs(withGoogleMap((props) => {
       }}
     >
       {props.markers.map(function(country){
-        return <MovieMapMarker
-          key={country.value}
-          country={country}
-          position={{ lat: country.latitude, lng: country.longitude }}
-          total={country.total}
-        />
+        if (country.total > 0) {
+          return <MovieMapMarker
+            key={country.value}
+            country={country}
+            position={{ lat: country.latitude, lng: country.longitude }}
+            total={country.total}
+          />
+        } else {
+            return ''
+        }
       })}
     </GoogleMap>
   )
@@ -34,7 +38,10 @@ const Map = withScriptjs(withGoogleMap((props) => {
 
 
 const mapStateToProps = (state) => {
-  return { selectedCountry: state.countryFilter.selectedCountry }
+  return {
+    selectedCountry: state.countryFilter.selectedCountry,
+    markers: state.mapMarkers.markers
+  }
 };
 
 export default connect(mapStateToProps)(Map);

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from "axios/index";
 import {GET_COUNTRIES} from "../../config";
 import Map from "./Map";
+import selectMarkers from "./actions/selectMarkers";
 
 
 class MovieMap extends Component {
@@ -21,24 +22,22 @@ class MovieMap extends Component {
 
   getMarkers() {
     axios.get(GET_COUNTRIES).then((response) => {
-      this.setState({
-        ...this.state,
-        countries: response.data.map((country) => {
-          return {
-            value: country.id,
-            label: country.country,
-            latitude: country.latitude,
-            longitude: country.longitude,
-            total: country.total_number_of_films
-          }
-        })
+      const markers = response.data.map((country) => {
+        return {
+          value: country.id,
+          label: country.country,
+          latitude: country.latitude,
+          longitude: country.longitude,
+          total: country.total_number_of_films
+        }
       });
+      selectMarkers(markers)
     });
   }
 
   render() {
     return (
-      <Map {...this.props} lat={this.state.initLat} long={this.state.initLong} markers={this.state.countries} />
+      <Map {...this.props} lat={this.state.initLat} long={this.state.initLong} />
     )
   }
 }

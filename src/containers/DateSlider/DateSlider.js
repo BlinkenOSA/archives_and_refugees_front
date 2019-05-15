@@ -4,11 +4,12 @@ import Tick from './Tick'
 import Track from './Track'
 import Handle from './Handle'
 import axios from 'axios'
-import {GET_TEMPORAL_COVERAGE} from "../../config";
+import {GET_COUNTRIES, GET_TEMPORAL_COVERAGE} from "../../config";
 import {connect} from "react-redux";
 import selectDates from "./actions/selectDates";
 import selectRecords from "../Records/actions/selectRecords";
 import {colors} from '../../config/colors';
+import selectMarkers from "../Map/actions/selectMarkers";
 
 const sliderStyle = {
   position: 'relative',
@@ -68,7 +69,20 @@ class DateSlider extends Component {
       keyword: keywordParam,
       date_from: this.props.date_from,
       date_to: this.props.date_to
-    })
+    });
+
+    axios.get(GET_COUNTRIES, {params: {date_from: this.props.date_from, date_to: this.props.date_to}}).then((response) => {
+      const markers = response.data.map((country) => {
+        return {
+          value: country.id,
+          label: country.country,
+          latitude: country.latitude,
+          longitude: country.longitude,
+          total: country.total_number_of_films
+        }
+      });
+      selectMarkers(markers)
+    });
   };
 
   componentDidMount() {
