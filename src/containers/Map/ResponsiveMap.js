@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import MovieMap from "./MovieMap";
-import {Collapse} from "reactstrap";
 
 class ResponsiveMap extends Component {
 

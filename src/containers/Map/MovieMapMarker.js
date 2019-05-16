@@ -28,7 +28,7 @@ const MovieMapMarker = (props) => {
     } else {
       selectedCountryValue = '0';
     }
-    
+
     if (props.country.value === selectedCountryValue) {
       fontColor='000';
       fillColor='D5A021';
