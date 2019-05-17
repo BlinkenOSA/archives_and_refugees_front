@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, Modal, ModalBody, ModalFooter, ButtonGroup, ModalHeader} from 'reactstrap';
 import style from './VideoModal.module.scss'
+import ReactGA from 'react-ga';
 
 class VideoModal extends React.Component {
   constructor(props) {
@@ -13,6 +14,12 @@ class VideoModal extends React.Component {
   }
 
   toggle() {
+    ReactGA.event({
+      category: 'Trailer',
+      action: 'Click on Watch Trailer Button',
+      label: this.props.movie.title
+    });
+
     this.setState({
       modal: !this.state.modal
     });
@@ -22,7 +29,14 @@ class VideoModal extends React.Component {
     return (
       <div>
         <ButtonGroup>
-          <a href={this.props.movie.catalog_url} target={'_blank'} className={'btn btn-secondary btn-sm'}>Catalog</a>
+          <ReactGA.OutboundLink
+            eventLabel={this.props.movie.catalog_url}
+            to={this.props.movie.catalog_url}
+            target="_blank"
+            className={'btn btn-secondary btn-sm'}
+          >
+            Catalog
+          </ReactGA.OutboundLink>
           <Button outline={false} size={'sm'} onClick={this.toggle} className={style.TrailerButton}> Watch Trailer</Button>
         </ButtonGroup>
         <Modal isOpen={this.state.modal} toggle={this.toggle} contentClassName={style.ModalContent} size={'lg'}>

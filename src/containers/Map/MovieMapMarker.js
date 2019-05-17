@@ -5,11 +5,17 @@ import selectRecords from "../Records/actions/selectRecords";
 
 import {palette} from '../../config/colors';
 import {connect} from "react-redux";
+import ReactGA from "react-ga";
 
 const MovieMapMarker = (props) => {
   const country = props.country;
 
   const onMarkerClick = (evt) => {
+    ReactGA.event({
+      category: 'MapSelect',
+      action: 'Click on Map Button',
+      label: country.country
+    });
     selectCountry(country);
     selectRecords({
       country: country.value,

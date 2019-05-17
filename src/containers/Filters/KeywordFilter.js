@@ -6,6 +6,7 @@ import selectKeyword from "./actions/selectKeyword";
 import selectRecords from "../Records/actions/selectRecords";
 import {connect} from "react-redux";
 import {selectStyles} from "../../config/colors";
+import ReactGA from "react-ga";
 
 
 class KeywordFilter extends Component {
@@ -35,6 +36,11 @@ class KeywordFilter extends Component {
   saveChanges(value) {
     let keyword;
     keyword = value ? value.value : null;
+    ReactGA.event({
+      category: 'KeywordSelect',
+      action: 'Click on Keyword Filter',
+      label: value ? value.label : 'clear'
+    });
     selectKeyword(value);
     selectRecords({
       keyword: keyword,

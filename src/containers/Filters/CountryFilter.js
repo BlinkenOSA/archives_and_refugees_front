@@ -6,6 +6,7 @@ import selectCountry from "./actions/selectCountry";
 import {connect} from "react-redux";
 import selectRecords from "../Records/actions/selectRecords";
 import {selectStyles} from "../../config/colors";
+import ReactGA from "react-ga";
 
 class CountryFilter extends Component {
   constructor(props) {
@@ -36,6 +37,11 @@ class CountryFilter extends Component {
   saveChanges(value, action) {
     let country;
     country = value ? value.value : null;
+    ReactGA.event({
+      category: 'CountrySelect',
+      action: 'Click on Country Filter',
+      label: value ? value.label : 'clear'
+    });
     selectCountry(value);
     selectRecords({
       country: country,
